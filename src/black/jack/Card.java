@@ -18,7 +18,7 @@ public class Card {
   }
 
   public String getInfo() {
-    return this.value + " " + this.color;
+    return this.value + " " + this.color + ", ";
   }
 }
 

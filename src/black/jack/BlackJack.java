@@ -27,8 +27,9 @@ public class BlackJack {
 
     Card myCard = new Card(9,"Heart");
     System.out.println(myCard.getInfo());
-    Deck myDeck = new Deck(2);
+    Deck myDeck = new Deck(8);
     System.out.println(myDeck.getInfoDeck());
+  //  myDeck.getInfoDeck();
 
   }
 }

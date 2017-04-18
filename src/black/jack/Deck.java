@@ -1,6 +1,8 @@
 package black.jack;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,19 +11,59 @@ import java.util.List;
 public class Deck {
   int numberOfCardInDeck;
   Card cards;
-  List<Card> cardsList;
+  ArrayList<Card> cardsList;
+  RandomGenrator randomGenrator;
+
 
   public Deck(int numberOfCardInDeck) {
     this.numberOfCardInDeck = numberOfCardInDeck;
     cardsList = new ArrayList<>();
-    for (int i = 0; i < numberOfCardInDeck; i++) {
-      this.cards = new Card((int) (Math.random() * 11), "Heart");
+    int randHeart = 0;
+    int randClubs = 0;
+    int randSpades = 0;
+    int randDiamonds = 0;
+    //   while ((randHeart + randClubs + randSpades + randDiamonds) < numberOfCardInDeck) {
+    for (int i = 0; i < numberOfCardInDeck / 4; i++) {
+      randHeart = (int) (Math.random() * (numberOfCardInDeck / 4 + 1));
+      this.cards = new Card(randHeart, "Heart");
+
       cardsList.add(cards);
+
     }
+    for (int i = 0; i < numberOfCardInDeck / 4; i++) {
+      randClubs = (int) (Math.random() * (numberOfCardInDeck / 4 + 1));
+      this.cards = new Card(randClubs, "Clubs");
+
+      cardsList.add(cards);
+
+    }
+    for (int i = 0; i < numberOfCardInDeck / 4; i++) {
+      randSpades = (int) (Math.random() * (numberOfCardInDeck / 4 + 1));
+      this.cards = new Card(randSpades, "Spades");
+
+      cardsList.add(cards);
+
+    }
+    for (int i = 0; i < numberOfCardInDeck / 4; i++) {
+      randDiamonds = (int) (Math.random() * (numberOfCardInDeck / 4 + 1));
+      this.cards = new Card(randDiamonds, "Diamonds");
+
+      cardsList.add(cards);
+
+    }
+    //   }
+    // List<Integer> load = randomGenrator.n_random(4, 4);
+    //   for (int i = 0; i < randomGenrator.n_random(numberOfCardInDeck, 4).size(); i++) {
+    //   System.out.println(load.get(1));
+    //   }
   }
 
   public String getInfoDeck() {
-    return numberOfCardInDeck + "Cards - " + cards.getInfo();
+    String result = numberOfCardInDeck + " Cards - ";
+    for (int i = 0; i < cardsList.size(); i++) {
+      result += cardsList.get(i).getInfo();
+    }
+    return result;
   }
 
   public Card draw() {
@@ -31,4 +73,9 @@ public class Deck {
     return drawnCard;
   }
 
+  public List<Card> shuffel() {
+    ArrayList<Card> suffeledList = new ArrayList<>();
+    suffeledList = Collections.shuffle(cardsList);
+    return suffeledList;
+  }
 }

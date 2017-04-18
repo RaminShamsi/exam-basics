@@ -36,15 +36,21 @@ The application is accepted if:
 
 #### Your answer:
 [add your answer here]   
-1:   
-2:   
-3:   
-4:   
-5:   
-6:   
-7:   
-8:   
+1:   the method information, started with modifier which shows the accessibility 
+2:   type of return value 
+3:   name of the method
+4:   type of input argument
+5:   input argument
+6:   variable name and it's type 
+7:   the block which method runs it
+8:   return value from method
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
+The constructor is a special type of method which responsible how to
+make an object of that class, it contains rules and frame works for when 
+an object of class created, it has to be created based on those rules and
+fits inside that framework. If we don't make any constructor, the default
+constructor  will be used.
+
 [add your answer here]
